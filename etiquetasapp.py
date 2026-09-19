@@ -18,7 +18,7 @@ def cargar_base_datos():
 base_datos = cargar_base_datos()
 
 # Inicializar la lista de etiquetas de la sesión actual
-if "etiquetas_sesion" not in st_session_state:
+if "etiquetas_sesion" not in st.session_state:
     st.session_state.etiquetas_sesion = []
 
 # 2. Formulario de Selección y Búsqueda
