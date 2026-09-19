@@ -24,12 +24,12 @@ if "etiquetas_sesion" not in st.session_state:
 # 2. Formulario de Selección y Búsqueda
 st.subheader("Buscar o Agregar Producto")
 
-opciones_productos = base_datos["Descripcion"].tolist() if not base_datos.empty else []
+opciones_productos = base_datos["Descripcion del producto"].tolist() if not base_datos.empty else []
 busqueda = st.selectbox("Selecciona un producto (o escribe para buscar):", [""] + opciones_productos)
 
 if busqueda:
     # Obtener datos del producto seleccionado
-    info_prod = base_datos[base_datos["Descripcion"] == busqueda].iloc[0]
+    info_prod = base_datos[base_datos["Descripcion del producto"] == busqueda].iloc[0]
     lab_def = info_prod.get("Laboratorio", "")
     precio_def = float(info_prod.get("Precio", 0.0))
 else:
